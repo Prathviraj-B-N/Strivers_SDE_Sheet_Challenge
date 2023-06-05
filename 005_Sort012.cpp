@@ -16,6 +16,4 @@ void sort012(int *arr, int n)
          swap(arr[j],arr[k--]);
       }
    }
-
-
 }

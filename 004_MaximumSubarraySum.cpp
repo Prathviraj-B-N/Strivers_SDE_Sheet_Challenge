@@ -6,7 +6,6 @@ long long maxSubarraySum(int arr[], int n)
     long long ans = arr[0];
     long long sum = 0;
     
-
     for(int i = 0 ; i < n ; i++ ){
         sum += arr[i];
         ans = max(ans,sum);
