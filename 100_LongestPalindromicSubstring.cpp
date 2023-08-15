@@ -4,9 +4,11 @@ string longestPalinSubstring(string str)
     int n = str.size();
     vector<vector<bool>> dp(n,vector<bool>(n,false));
 
-    // single char is a pal
+    // start tracks of the starting index 
+    // maxLen is length of the longest palindrome found so far.
     int start = 0;
     int maxLen = 1;
+
     for(int i = 0; i < n; i++) dp[i][i] = true;
     
     // for len 2
@@ -15,7 +17,9 @@ string longestPalinSubstring(string str)
     for(int i = 0; i < n-1;i++){
       if (str[i] == str[i + 1]) {
         dp[i][i+1] = true;
+
         if(!vis){
+           // choose any one because all are 2 len
             start = i;
             maxLen = 2;
             vis = true;
